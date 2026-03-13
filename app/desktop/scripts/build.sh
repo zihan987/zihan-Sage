@@ -376,7 +376,7 @@ fi
 echo "Tauri CLI: $TAURI_CMD"
 
 # Skip signature for updater artifacts as keys are not provided
-# export TAURI_SKIP_SIGNATURE=true
+export TAURI_SKIP_SIGNATURE=true
 
 if [ "$MODE" = "release" ]; then
   # Cargo.toml now has [profile.release] for optimization
