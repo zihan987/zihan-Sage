@@ -17,16 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-latest
-            arch: aarch64
-            target: aarch64-apple-darwin
-          - os: macos-latest
-            arch: x86_64
-            target: x86_64-apple-darwin
-          - os: windows-latest
-            arch: x86_64
-            target: x86_64-pc-windows-msvc
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             arch: x86_64
             target: x86_64-unknown-linux-gnu
 
@@ -120,6 +111,7 @@ jobs:
         shell: bash -l {0}
         env:
           PIP_INDEX_URL: https://pypi.org/simple
+          TAURI_SKIP_SIGNATURE: "true"
         run: |
           chmod +x app/desktop/scripts/build.sh
           chmod +x app/desktop/scripts/generate_cert.sh
